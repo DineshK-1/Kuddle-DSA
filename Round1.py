@@ -1,3 +1,7 @@
+# Dinesh Kumar S
+# RA2111032020044
+# Time Complexity: O(NlogN), O(N + NlogN + N) Inital Loop to create hashmap, Sorting the values, Checking the answer
+
 T = int(input())
 
 while(T>0):

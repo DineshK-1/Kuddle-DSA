@@ -26,9 +26,10 @@ while(T>0):
         categories_eaten +=1
 
     if categories_eaten < K:
-        print("Ans:", -1)
+        print(-1)
         T-=1
         continue
-    print("Ans: ", time_taken)
+
+    print(time_taken)
 
     T-=1

@@ -69,7 +69,7 @@ class Screen:
 class Gold(Screen):
 
     def __init__(self) -> None:
-        time_delta = datetime.timedelta(minutes=10)
+        time_delta = datetime.timedelta(minutes=40)
         super().__init__("Gold", 400, 10, 2, datetime.datetime.now() + time_delta)
 
 class iMax(Screen):

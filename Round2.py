@@ -60,6 +60,8 @@ class Screen:
     
     def remove_booking(self, user):
         self.sold_to.remove(user)
+        if(len(self.waitlist)>0):
+            self.waitlist[0].buy_ticket(self)
 
     def add_waitlist(self, user):
         self.waitlist.append(user)

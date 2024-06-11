@@ -158,7 +158,9 @@ def main():
                 print(f"{i+1}. {screens[i]}")
 
             screen_selected = int(input("Select a Screen:")) - 1
-
+            if(screens[screen_selected].sold_out()):
+                waitlist = input("This screen is soldout, do you want to enter a waiting list?")
+                continue
             transaction = user.buy_ticket(screens[screen_selected])
 
             if transaction:

@@ -57,8 +57,8 @@ class Screen:
     def book_ticket(self, user):
         self.sold_to.append(user)
     
-    def remove_booking(self, booking):
-        self.sold_to.remove(booking)
+    def remove_booking(self, user):
+        self.sold_to.remove(user)
 
 class Gold(Screen):
 
@@ -218,7 +218,7 @@ def main():
             time_diff = datetime.timedelta(minutes=30)
 
             if(booekd[inp].time > datetime.datetime.now() + time_diff ):
-                
+                booekd[inp].remove_booking(user)
                 print("Cancelled Booking")
             else:
                 print("Can't cancel bookings")

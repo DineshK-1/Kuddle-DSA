@@ -38,6 +38,7 @@ class Screen:
         self.time = time
 
         self.sold_to = []
+        self.waitlist = []
 
     def __str__(self) -> str:
         return f"{self.name} at ${self.ticket_price} with food_discount: {self.food_discount}%"
@@ -59,6 +60,9 @@ class Screen:
     
     def remove_booking(self, user):
         self.sold_to.remove(user)
+
+    def add_waitlist(self, user):
+        self.waitlist.append(user)
 
 class Gold(Screen):
 
@@ -159,7 +163,8 @@ def main():
 
             screen_selected = int(input("Select a Screen:")) - 1
             if(screens[screen_selected].sold_out()):
-                waitlist = input("This screen is soldout, do you want to enter a waiting list?")
+                print("This screen is soldout, you are entering a waitlist")
+                screens[screen_selected].add_waitlist(user)
                 continue
             transaction = user.buy_ticket(screens[screen_selected])
 
